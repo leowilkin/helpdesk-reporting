@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unblock Website Request</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Request to Unblock a Website</h1>
+        <form id="unblockForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required placeholder="John Doe">
+
+            <label for="website">Website URL:</label>
+            <input type="url" id="website" name="website" required placeholder="https://example.com">
+
+            <label for="reason">Reason for Unblocking:</label>
+            <textarea id="reason" name="reason" required placeholder="Please provide a reason..."></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+        <p id="mailtoLink"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
