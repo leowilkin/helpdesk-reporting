@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background for dark mode */
+    color: #b8dfd9; /* Light text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 10px;
+}
+
+.container {
+    background-color: #1e1e1e; /* Darker container background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: #ffcf00; /* Wellington branded yellow */
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+    display: block;
+    color: #b8dfd9; /* Text color */
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #f49812; /* Wellington branded orange border */
+    background-color: #2a2a2a; /* Input background color */
+    color: #fff; /* Input text color */
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f49812; /* Wellington branded orange */
+    color: #121212; /* Button text color for contrast */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ffcf00; /* Hover color */
+}
+
+#mailtoLink {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#mailtoLink a {
+    color: #ffcf00; /* Link color */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#mailtoLink a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: auto;
+    padding: 10px 0;
+    text-align: center;
+    color: #b8dfd9; /* Footer text color */
+    font-size: 14px;
+}
+
+footer a {
+    color: #ffcf00; /* Footer link color */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="text"],
+    input[type="url"],
+    textarea {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    #mailtoLink a {
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
