@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
 export default async function (req, res) {
     if (req.method !== 'POST') {
