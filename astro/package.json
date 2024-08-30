@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "astro": "^4.15.1",
-    "nodemailer": "^6.9.14" 
+    "nodemailer": "^6.9.14",
+    "next-auth": "^4.24.7"
   }
 }
