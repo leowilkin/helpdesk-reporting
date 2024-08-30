@@ -1,7 +1,8 @@
 {
-  "name": "gullible-giant",
-  "type": "module",
+  "name": "helpdesk-reporting",
+  "description": "report a website that's blocked at wellington",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -9,6 +10,12 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+  "author": "Leo Wilkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leowilkin/helpdesk-reporting/issues"
+  },
+  "homepage": "https://github.com/leowilkin/helpdesk-reporting#readme",
   "dependencies": {
     "astro": "^4.15.1",
     "nodemailer": "^6.9.14",
