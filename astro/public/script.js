@@ -14,7 +14,7 @@ document.getElementById('unblockForm').addEventListener('submit', function(event
     };
 
     // Send the data to the serverless function via POST request
-    fetch('https://reporting.staging.wilkin.xyz/api/send', {
+    fetch('/api/send', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
