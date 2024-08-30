@@ -6,13 +6,28 @@ document.getElementById('unblockForm').addEventListener('submit', function(event
     const website = document.getElementById('website').value;
     const reason = document.getElementById('reason').value;
 
-    // Encode the email content
-    const subject = encodeURIComponent('Request to Unblock Website');
-    const body = encodeURIComponent(`Dear IT Helpdesk,\n\nI would like to request the unblocking of the following website:\n\nWebsite: ${website}\n\nReason: ${reason}\n\nThank you,\n${name}`);
+    // Create the data object to send to the serverless function
+    const formData = {
+        name: name,
+        website: website,
+        reason: reason
+    };
 
-    // Create the mailto link
-    const mailtoLink = `mailto:helpdesk@wellingtoncollege.org.uk?subject=${subject}&body=${body}`;
-
-    // Display the mailto link
-    document.getElementById('mailtoLink').innerHTML = `<a href="${mailtoLink}">Click here to send your request</a>`;
+    // Send the data to the serverless function via POST request
+    fetch('/api/send', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Display the success message
+        document.getElementById('mailtoLink').innerText = data;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('mailtoLink').innerText = 'An error occurred. Please try again.';
+    });
 });

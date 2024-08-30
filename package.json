@@ -1,0 +1,22 @@
+{
+  "name": "helpdesk-reporting",
+  "version": "0.0.1",
+  "description": "report a website that's blocked at wellington",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leowilkin/helpdesk-reporting.git"
+  },
+  "author": "Leo Wilkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leowilkin/helpdesk-reporting/issues"
+  },
+  "homepage": "https://github.com/leowilkin/helpdesk-reporting#readme",
+  "dependencies": {
+    "nodemailer": "^6.9.14"
+  }
+}
