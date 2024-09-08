@@ -7,11 +7,10 @@ export default async function (req, res) {
 
     const { name, website, reason } = req.body;
 
-    // Set up the SMTP server configuration
     let transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST, // Replace with your SMTP server
-        port: 465, // Replace with the correct port
-        secure: true, // Set to true if using port 465
+        host: process.env.SMTP_HOST,
+        port: 465,
+        secure: true,
         auth: {
             user: process.env.SMTP_USER,
             pass: process.env.SMTP_PASS
@@ -20,7 +19,7 @@ export default async function (req, res) {
 
     // Set up the email data
     let mailOptions = {
-        from: '"Website Unblock Request" <help@wilkin.xyz>', // Replace with your email
+        from: '"Website Unblock Request" <EMAIL FROM ADDRESS>', // Replace with your email
         to: process.env.HELPDESK,
         subject: "Request to Unblock Website",
         text: `Dear IT Helpdesk,\n\nI would like to request the unblocking of the following website:\n\nWebsite: ${website}\n\nReason: ${reason}\n\nThank you,\n${name}`

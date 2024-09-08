@@ -20,7 +20,7 @@ export default async function (req, res) {
 
     // Set up the email data
     let mailOptions = {
-        from: '"Website Unblock Request" <help@wilkin.xyz>', // Replace with your email
+        from: '"Website Unblock Request" <EMAIL FROM>', // Replace with your email
         to: process.env.HELPDESK,
         subject: "Request to Unblock Website",
         text: `Dear IT Helpdesk,\n\nI would like to request the unblocking of the following website:\n\nWebsite: ${website}\n\nReason: ${reason}\n\nThank you,\n${name}`
