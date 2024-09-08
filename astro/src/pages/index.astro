@@ -1,49 +1,35 @@
 ---
-import { getSession } from "next-auth/react";
-
-const session = await getSession();
-
-if (!session) {
-  // Redirect to GitHub OAuth if not signed in
-  return {
-    redirect: '/api/auth/signin/github'
-  };
-}
+import '../styles/styles.css';
 ---
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unblock Website Request</title>
-  <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unblock Website Request</title>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-user">
-      <p>Hello, {session.user.name} ({session.user.email})</p>
-      <button onclick="window.location.href='/api/auth/signout'">Sign Out</button>
+    <div class="container">
+        <h1>Blocked Website Reporting Form</h1>
+        <form id="unblockForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="John Doe">
+
+            <label for="website">Website URL</label>
+            <input type="url" id="website" name="website" required placeholder="https://example.com">
+
+            <label for="reason">Reason for Unblocking</label>
+            <textarea id="reason" name="reason" required placeholder="Please provide a reason..."   ></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+        <p id="mailtoLink"></p>
     </div>
-  </nav>
-  <div class="container">
-    <h1>Blocked Website Reporting Form</h1>
-    <form id="unblockForm" method="POST" action="/api/send-email">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required placeholder="John Doe" value={session.user.name} readonly>
 
-      <label for="website">Website URL</label>
-      <input type="url" id="website" name="website" required placeholder="https://example.com">
+    <footer>
+        <p>&copy; 2024 <a href="mailto:leo@wilkin.xyz">Leo Wilkin</a></p>
+    </footer>
 
-      <label for="reason">Reason for Unblocking</label>
-      <textarea id="reason" name="reason" required placeholder="Please provide a reason..."></textarea>
-
-      <button type="submit">Submit Request</button>
-    </form>
-    <p id="mailtoLink"></p>
-  </div>
-
-  <footer>
-    <p>&copy; 2024 <a href="mailto:leo@wilkin.xyz">Leo Wilkin</a></p>
-  </footer>
+    <script src="../scripts/script.js"></script>
 </body>
 </html>
